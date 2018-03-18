@@ -2,24 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Chat App</title>
+    <title>Join | ChatApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/style.css">
 
   </head>
-  <body>
-    <h1>Printing to the screen</h1>
+  <body class="centered-form">
 
-    <ol id="messages">
-    </ol>
+    <div class="centered-form__form">
 
-    <form id="message-form">
-      <input type="text" name="message" placeholder="Message">
-      <button>Send</button>
-    </form>
+      <form action="/chat.html">
+        <div class="form-field">
+          <h3>Join a Chat</h3>
+        </div>
+        <div class="form-field">
+          <label>Display name</label>
+          <input type="text" name="name" placeholder="Name" autofocus>
+        </div>
+        <div class="form-field">
+          <label>Room name</label>
+          <input type="text" name="room" placeholder="Room">
+        </div>
+        <div class="form-field">
+          <button>Join</button>
+        </div>
 
-    <button id="send-location">Send Location</button>
+      </form>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/libs/jquery-3.3.1.min.js"></script>
-    <script src="/js/index.js"></script>
+    </div>
+
   </body>
 </html>
