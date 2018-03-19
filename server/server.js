@@ -2,6 +2,7 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const socketIO = require('socket.io')
+const notifier = require('node-notifier');
 
 const {generateMessage, generateLocationMessage} = require('./utils/message')
 const {isRealString} = require('./utils/validation')
@@ -43,6 +44,14 @@ io.on('connection', (socket) => {
     if (user && isRealString(message.text)) {
       io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
     }
+
+
+
+  notifier.notify({
+      title: user.name,
+      message: message.text
+  });
+
 
     callback();
   });

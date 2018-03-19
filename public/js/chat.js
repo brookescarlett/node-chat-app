@@ -5,6 +5,8 @@ function scrollToBottom () {
   element.scrollIntoView({behavior: "instant", block: "end", inline: "nearest"});
 }
 
+
+
 socket.on('connect', function(){
   const params = jQuery.deparam(window.location.search);
   socket.emit('join', params, function(err) {
@@ -42,6 +44,7 @@ socket.on('newMessage', function(message){
   });
 
   jQuery('#messages').append(html);
+
   scrollToBottom();
 });
 

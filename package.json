@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "moment": "^2.21.0",
+    "node-notifier": "^5.2.1",
     "socket.io": "^2.0.4"
   }
 }
